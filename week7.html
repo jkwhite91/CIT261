@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title>Week 7</title>
+        <link rel="stylesheet" type="text/css" href="week7.css">
+        <script src="lesson7.js"></script>
+    </head>
+    <body>
+            <a href="index.html" class="hbutton">Home</a>
+        <h1>Modifiying CSS Properties with Javascript</h1>
+
+        <h2 class="text" id="text">Change the color of this text</h2>
+        <select id="color" onchange="textColor()">
+            <option value="red">Red</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="black">Black</option>
+        </select>
+
+        <h2>Click on this button to chage the image</h2>
+        <button onClick="changeImage()">Change Image</button>
+        <div class="image" id="photograph"></div>
+
+    </body>
+</html>

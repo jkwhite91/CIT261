@@ -1,0 +1,53 @@
+.hbutton{
+    color: black;
+    text-decoration: none;
+    border: solid 1px black;
+    padding: 5px;
+}
+
+.ogre_left{
+    width: 200px;
+    height: 200px;
+    background-image: URL("Lesson 8/Ogre_left.png");
+    animation: ogreLplay 3.0s steps(9) infinite;
+}
+
+@keyframes ogreLplay{
+   100% { background-position: -1800px; }
+}
+
+.ogre_attack{
+    width: 200px;
+    height: 200px;
+    background-image: URL("Lesson 8/Ogre_attack.png");
+    animation: ogreAplay 1.0s steps(6) infinite;
+}
+
+@keyframes ogreAplay{
+   100% { background-position: -1200px; }
+}
+
+.ogre_death{
+    width: 200px;
+    height: 200px;
+    background-image: URL("Lesson 8/Ogre_death.png");
+    animation: ogreDplay 3.0s steps(6) 1;
+}
+
+@keyframes ogreDplay{
+    100% { background-position: -1200px; }
+}
+
+#transition {
+    width: 300px;
+    height: 200px;
+    transition-timing-function: ease;
+    -webkit-transition: width 2s, height 2s;
+    transition: width 2s, height 2s;
+    transition-delay: 0s;
+}
+
+#transition:hover {
+    width: 1000px;
+    height: 800px;
+}

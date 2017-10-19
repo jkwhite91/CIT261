@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Topic 8</title>
+		<script>
+			var clicks = 0;
+			function attack() {
+				var image = document.getElementById('ogre');
+				clicks++;
+				switch(clicks)
+				{
+					case 0:
+						image.className="ogre_left";
+						break;
+					case 1:
+						image.className="ogre_attack";
+						break;
+					case 5:
+						image.className="ogre_death";
+						break;			
+				}
+			};
+		</script>
+		<link rel="stylesheet" type="text/css" href="week8.css">
+	</head>
+	<body>
+		<a href="index.html" class="hbutton">Home</a>
+		<h1>CSS3 Transitions and Animations and Triggering them with JavaScript</h1>
+
+		<p>Animate: Here is an ogre. You need to beat him. As soon as you click on him he will begin to attack you. Once defeated he will die.</p>
+		<div id="ogre" class="ogre_left">
+		</div>
+		<button onClick="attack()">Click to attack</button>
+
+		<p>Transition: Hover over the image to increase the size</p>
+		<img src="Lesson 8/landscape.jpeg" id="transition" class="landscape" alt="landscape">
+		
+	</body>
+</html>

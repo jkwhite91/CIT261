@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Week 2</title>
+
+        <script>
+            var name = document.getElementById('name').value;
+            var color = document.getElementById('color').value;
+            var hobby = document.getElementById('hobby').value;
+
+            var profile = new Object();
+
+            profile.name = name;
+            profile.color = color;
+            profile.hobby = hobby;
+            
+        </script>
+        <style>
+            .hbutton{
+                color: black;
+                text-decoration: none;
+                border: solid 1px black;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+            <a href="index.html" class="hbutton">Home</a>
+        <h1>JavaScript - Object Creation Functions, Properties, Methods, Instantiation</h1>
+        
+        <form onSubmit="makeProfile()">
+            <label for="name">Name:</label>
+            <input type="text" name="name"><br/>
+            <label for="color">Favorite Color:</label>
+            <input type="text" name="color"><br/>
+            <label for="hobby">Favorite Hobby:</label>
+            <input type="text" name="hobby"><br/>
+            <input type="submit" value="Submit">
+        </form>
+
+
+        
+    </body>
+</html>
