@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Week 5</title>
+        <style>
+            #body{
+                background: #2d862d;
+                border-radius: 15px;
+                padding: 15px;
+                width: 50%;
+            }
+            #color{
+                visibility: hidden;
+            }
+            #food{
+                visibility: hidden;
+            }
+            .hbutton{
+                color: black;
+                text-decoration: none;
+                border: solid 1px black;
+                padding: 5px;
+            }
+        </style>
+        <script>
+            function strstore(){
+                var str = document.getElementById("string").value;
+
+                localStorage.setItem("string", str);
+            }
+
+            function showstr(){
+                var str = localStorage.getItem("string");
+                str = document.getElementById("showstr").innerHTML = str;
+            }
+
+            function clearstr(){
+                localStorage.removeItem("string");
+                document.getElementById("showstr").innerHTML = "";
+            }
+
+            function decide(sel){
+                if (sel == "color")
+                {
+                    document.getElementById("faves").innerHTML="";
+                    document.getElementById("color").style.visibility="visible";
+                    valid=true;
+                }
+                if (sel == "food")
+                {
+                    document.getElementById("faves").innerHTML="";
+                    document.getElementById("food").style.visibility="visible";
+                }
+                if (sel == "none"){
+                    document.getElementById("faves").innerHTML="Please choose a vaild option";
+                    document.getElementById("food").style.visibility="hidden";
+                    document.getElementById("color").style.visibility="hidden";
+                }
+            }
+
+            function store(value){
+                var type = document.getElementById("type").value;
+                localStorage.setItem("type", type);
+                localStorage.setItem("fav", value);
+            }
+
+            function fave(){
+                var type = localStorage.getItem("type");
+                var fav = localStorage.getItem("fav");
+                document.getElementById("faves").innerHTML = "Your favorite " + type + " is " + fav;
+                document.getElementById("color").style.visibility="hidden";
+                document.getElementById("food").style.visibility="hidden";        
+            }
+
+            function remFave(){
+                document.getElementById("faves").innerHTML="";
+                localStorage.removeItem("type");
+                localStorage.removeItem("fav");
+            }
+        </script>
+    </head>
+    <body>
+        <a href="index.html" class="hbutton">Home</a>
+        <div id="body">
+            <h1>Local Storage</h1>
+            <p>This program simply stores and retrives data to and from the local storage.</p>
+
+            <div>
+                <label>Input a string:</label>
+                <input type="text" id="string">
+                <input type="button" value="Save" onclick="strstore()">
+                <br/>
+                <p id="showstr"></p>
+                <input type="button" value="Pull from storage" onclick="showstr()"/>
+                <input type="button" value="Clear Local Storage" onclick="clearstr()">
+            </div>
+            <br/><br/>
+            <div>
+                <select id="type" onchange="decide(this.value)">
+                    <option value="none">Please choose one</option>
+                    <option value="color">Favorite Color</option>
+                    <option value="food">Favorite Food</option>
+                </select><br/>
+                <select id="color" onchange="store(this.value)">
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="violet">Violet</option>
+                    <option value="grey">Grey</option>
+                    <option value="brown">Brown</option>
+                    <option value="white">White</option>
+                    <option value="black">Black</option>
+                </select>
+                <select id="food" onchange="store(this.value)">
+                    <option value="Italian">Italian</option>
+                    <otpion value="Mexican">Mexican</otpion>
+                    <option value="American">American</option>
+                    <option value="Chineese">Chineese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Indian">Indian</option>
+                </select>
+                <br/>
+                <p id="faves"></p>
+                <input type="button" value="Load Favorite" onclick="fave()">
+                <input type="button" value="Delete Favorite" onclick="remFave()">
+            </div>
+        </div>
+    </body>
+</html>
