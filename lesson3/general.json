@@ -1,0 +1,100 @@
+{
+    "Monson":{
+        "name": "Thomas S. Monson",
+        "img": "lesson3/monson.jpg",
+        "birth": "Born: August 21, 1927",
+        "home": "Hometown: Salt Lake City, Utah",
+        "call": "Ordained: March 12, 1995"
+    },
+    "Eyring":{
+        "name": "Henry B. Eyring",
+        "img": "lesson3/eyring.jpg",
+        "birth": "Born: May 31, 1933",
+        "home": "Hometown: Princeton, New Jersey",
+        "call": "Ordained: April 1, 1995"
+    },
+    "Uchtdorf":{
+        "name": "Dieter F. Uchtdorf",
+        "img": "lesson3/uchtdorf.jpg",
+        "birth": "Born: November 6, 1940",
+        "home": "Hometown: Ostrava, Czechoslovakia",
+        "call": "Ordained: October 2, 2004"
+        },
+    "Nelson":{
+        "name": "Russell M. Nelson",
+        "img": "lesson3/nelson.jpg",
+        "birth": "Born: September 9, 1924",
+        "home": "Hometown: Salt Lake City, Utah",
+        "call": "Ordained: April 7, 1984"
+    },
+    "Oaks":{
+        "name": "Dallin H. Oaks",
+        "img": "lesson3/oaks.jpg",
+        "birth": "Born: August 12,1932",
+        "home": "Hometown: Provo, Utah",
+        "call": "Ordained: May 3, 1984"
+    },
+    "Ballard":{
+        "name": "M. Russell Ballard",
+        "img": "lesson3/ballard.jpg",
+        "birth": "Born: October 8, 1928",
+        "home": "Hometown: Salt Lake City, Utah",
+        "call": "Ordained: October 6, 1985"
+    },
+    "Holland":{
+        "name": "Jeffrey R. Holland",
+        "img": "lesson3/holland.jpg",
+        "birth": "Born: December 3, 1940",
+        "home": "Hometown: St. George, Utah",
+        "call": "Ordained: April 1, 1994"
+    },
+    "Bednar":{
+        "name": "David A. Bednar",
+        "img": "lesson3/bednar.jpg",
+        "birth": "Born: June 15, 1952",
+        "home": "Hometown: Oakland, California",
+        "call": "Ordained: October 7, 2004"
+    },
+    "Cook":{
+        "name": "Quentin L. Cook",
+        "img": "lesson3/cook.jpg",
+        "birth": "Born: September 8, 1940",
+        "home": "Hometown: Logan, Utah",
+        "call": "Ordained: October 6, 2007"
+    },
+    "Christofferson":{
+        "name": "D. Todd Christofferson",
+        "img": "lesson3/christofferson.jpg",
+        "birth": "Born: January 24, 1945",
+        "home": "Hometown: American Fork, Utah",
+        "call": "Ordained: April 5, 2008"
+    },
+    "Andersen":{
+        "name": "Neil L. Andersen",
+        "img": "lesson3/andersen.jpg",
+        "birth": "Born: August 9, 1951",
+        "home": "Hometown: Pocatello, Idaho",
+        "call": "Ordained: April 4, 2009"
+    },
+    "Rasband":{
+        "name": "Ronald A. Rasband",
+        "img": "lesson3/rasband.jpg",
+        "birth": "Born: February 6, 1951",
+        "home": "Hometown: Salt Lake City, Utah",
+        "call": "Ordained: October 3, 2015"
+    },
+    "Stevenson":{
+        "name": "Gary E. Stevenson",
+        "img": "lesson3/stevenson.jpg",
+        "birth": "Born: August 6, 1955",
+        "home": "Hometown: Ogden, Utah",
+        "call": "Ordained: October 3, 2015"
+    },
+    "Renlund":{
+        "name": "Dale G. Renlund",
+        "img": "lesson3/renlund.jpg",
+        "birth": "Born: November 13, 1952",
+        "home": "Hometown: Salt Lake City, Utah",
+        "call": "Ordained: October 3, 2015"
+    }
+}

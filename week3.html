@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Week 3 and 4</title>
+        <link rel="stylesheet" type="text/css" href="lesson3/week3.css">
+    </head>
+    <body class="format">
+        <a href="index.html" class="hbutton">Home</a>
+
+        <h1>JSON and AJAX</h1>
+        <p>
+            This program uses an AJAX request to pull the name, image, birthdate, 
+            hometown and date called of each apostle. <br/>
+            It pulls all of this information from an external JSON file. It also uses a for loop and a 
+            conditional statement to pull the correct information for the specified apostle.
+        </p>
+        <label>Select an Apostle:</label>
+        <select id="selection" onchange="display(value)">
+            <option value="Monson">Thomas S. Monson</option>
+            <option value="Eyring">Henry B. Eyring</option>
+            <option value="Uchtdorf">Dieter F. Uchtdorf</option>
+            <option value="Nelson">Russell M. Nelson</option>
+            <option value="Oaks">Dallin H. Oaks</option>
+            <option value="Ballard">M. Russell Ballard</option>
+            <option value="Holland">Jeffrey R. Holland</option>
+            <option value="Bednar">David A. Bednar</option>
+            <option value="Cook">Quentin L. Cook</option>
+            <option value="Christofferson">D. Todd Christofferson</option>
+            <option value="Andersen">Neil L. Andersen</option>
+            <option value="Rasband">Ronald A. Rasband</option>
+            <option value="Stevenson">Gary E. Stevenson</option>
+            <option value="Renlund">Dale G. Renlund</option>
+        </select>
+
+        <br/>
+        <br/>
+
+        <div class="person">
+            <img id="img" src="lesson3/unknown.png" alt="Genral Authority Picture">
+            <h2 id="name"></h2>
+            <p id="birth"></p>
+            <p id="home"></p>
+            <p id="call"></p>
+        </div>
+    </body>    
+	<script>
+            var ga, i, n, b, h, c = "";
+            var sel = document.getElementById('selection');
+            var p = sel.value;
+			var obj = [];		
+           
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					obj = JSON.parse(this.responseText);
+					display(p);
+				}
+			};
+			xmlhttp.open("GET", "lesson3/general.json", true);
+			xmlhttp.send();
+			
+            function display(person) {
+				for (ga in obj) {				
+                    if(person == ga){						
+						var generalauth = obj[ga];
+                        n = obj[ga]['name'];
+                        i = obj[ga]['img'];
+                        b = obj[ga]['birth'];
+                        h = obj[ga]['home'];
+                        c = obj[ga]['call'];
+                    }
+                }
+                document.getElementById("img").src = i;
+                document.getElementById("name").innerHTML = n;
+                document.getElementById("birth").innerHTML = b;
+                document.getElementById("home").innerHTML = h;
+                document.getElementById("call").innerHTML = c;
+            }
+        </script>
+</html>

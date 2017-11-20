@@ -1,0 +1,51 @@
+#hover{
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	transition: width 2s ease, height 2s ease;
+}
+
+#hover:hover{
+	width: 150px;
+	height: 150px;
+	background-color: blue;
+}
+
+#active{
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	transition: width 2s ease, height 2s ease;
+}
+
+#active:active{
+	width: 150px;
+	height: 150px;
+	background-color: blue;
+}
+
+#focus{
+	transition: width .5s ease-in-out;
+}
+
+#focus:focus{
+	background-color: red;
+	color: white;
+	width: 250px;
+}
+
+#checked{
+	transition: width 1s linear;
+}
+
+#checked:checked{
+	width: 50px;
+}
+
+#form:enabled {
+    background: #ffff00;
+}
+
+#form:disabled {
+    background: #000000;
+}

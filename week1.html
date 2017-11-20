@@ -4,18 +4,29 @@
         <meta charset="UTF-8" />
         <title>Week 1</title>
         <script>
-            function looperay(){    
-                var array = ["Apple", "Banana", "Carrot"];
-                var count = 0;
-                while(count < 6)
-                {
-                    if (count == 5)
-                    {
-                        document.getElementById('loop').innerHTML=array;
-                    }
+            var array = ["Apple", "Banana","Carrot","Dragonfruit","Eggplant","Figs"];
+            var count = 0;
+
+            function addTo() {
+                var newForV = document.getElementById("vegetable").value;
+                array.push(newForV);
+            }
+
+            function loopArray() {
+                if(count < array.length) {
+                    document.getElementById("loop").innerHTML=array[count];
                     count++;
                 }
-            };
+                else{
+                    count=0;
+                }
+            }
+
+            function printArray() {
+                var i = 0;
+                var full;
+                document.getElementById("whole").innerHTML = array.toString();
+            }
         </script>
         <style>
             .hbutton{
@@ -27,12 +38,24 @@
         </style>
     </head>
     <body>
-            <a href="index.html" class="hbutton">Home</a>
+        <a href="index.html" class="hbutton">Home</a>
         <h1>Javascript - Loops, Conditional Statements, Functions, Arrays</h1>
         
-        <p>This button will execute a JavaScript function. The function triggers a loop with a conditional statement inside. Once the conditional statement is met, the array is printed.</p>
-        <p id="loop"></p>
-        <button onClick="looperay()">Click Me!</button>
+        <p>
+            This button will execute a JavaScript function. The function triggers a loop with a conditional 
+            statement inside. This allows for looping through the array. There is also a button for displaying 
+            the array each item at a time. Items can be added into the array and the javascript deals with the 
+            additonal item increasing the array dynamically.
+        </p>
         
+        <p>Enter a friut or vegetable to be inserted into the array.</p>
+        <input type="text" id="vegetable">
+        <button onclick="addTo()">Add to loop</button>
+
+        <p id="loop"></p>
+        <button onclick="loopArray()">Loop through items</button>
+
+        <p id="whole"></p>
+        <button onclick="printArray()">Print the array</button>
     </body>
 </html>

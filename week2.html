@@ -5,16 +5,28 @@
         <title>Week 2</title>
 
         <script>
-            var name = document.getElementById('name').value;
-            var color = document.getElementById('color').value;
-            var hobby = document.getElementById('hobby').value;
+            function getPerson() {
+                var name = document.getElementById('name').value;
+                var color = document.getElementById('color').value;
+                var hobby = document.getElementById('hobby').value;
 
-            var profile = new Object();
-
-            profile.name = name;
-            profile.color = color;
-            profile.hobby = hobby;
-            
+                var person = new Object();
+                
+                if (name != null && name != "" 
+                    && color != null && color != ""
+                    && hobby != null && hobby != ""){
+                    person.name = name;
+                    person.color = color;
+                    person.hobby = hobby;
+                    document.getElementById("person").style.color = "Black";
+                    document.getElementById("person").innerHTML = "Hi " + person.name + "! " + person.color + " is such a cool color. " + person.hobby + " is a neat hobby.";
+                }
+                else
+                {
+                    document.getElementById("person").style.color = "Red";
+                    document.getElementById("person").innerHTML="Make sure to fill out all boxes";
+                }   
+            }
         </script>
         <style>
             .hbutton{
@@ -26,20 +38,18 @@
         </style>
     </head>
     <body>
-            <a href="index.html" class="hbutton">Home</a>
+        <a href="index.html" class="hbutton">Home</a>
         <h1>JavaScript - Object Creation Functions, Properties, Methods, Instantiation</h1>
         
-        <form onSubmit="makeProfile()">
-            <label for="name">Name:</label>
-            <input type="text" name="name"><br/>
-            <label for="color">Favorite Color:</label>
-            <input type="text" name="color"><br/>
-            <label for="hobby">Favorite Hobby:</label>
-            <input type="text" name="hobby"><br/>
-            <input type="submit" value="Submit">
-        </form>
+        <label>Name:</label>
+        <input type="text" id="name"><br/>
+        <label>Favorite Color:</label>
+        <input type="text" id="color"><br/>
+        <label>Favorite Hobby:</label>
+        <input type="text" id="hobby"><br/>
+        <input type="button" value="Create and Display" onclick="getPerson()"><br/>
 
-
+        <p id="person"></p>
         
     </body>
 </html>

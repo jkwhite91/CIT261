@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Week 6</title>
+        <style>
+            changer{
+                visibility: hidden;
+            }
+            .hbutton{
+                color: black;
+                text-decoration: none;
+                border: solid 1px black;
+                padding: 5px;
+            }
+        </style>
+        <script>
+            var i = 0;
+            var color = ["Red", "Yellow", "Green", "Blue"];
+
+            function create(){
+                var newThing = document.createElement("BUTTON");
+                var t = document.createTextNode("DON'T CLICK ME");
+                newThing.id = "newEl";
+                newThing.appendChild(t);
+                newThing.addEventListener("click",theText());
+                document.body.appendChild(newThing);
+            }
+
+            function theText(){
+                var newThing = document.createElement("P");
+                var t = document.createTextNode("Thank you for clicking on me.");
+                newThing.appendChild(t);
+                newThing.id = "theText";
+                document.body.appendChild(newThing);
+                document.getElementById("changer").style.visibility="visible";
+            }
+
+            function changeCSS(){
+                document.getElementById("theText").style.color = color[i];
+                document.getElementById("newEl").style.color = color[i];
+                if (i > 3)
+                {
+                    i = 0;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="index.html" class="hbutton">Home</a>
+        <h1>Dom Manipulation</h1>
+        <p>This document adds a button and a text and allows for those to have their colors changed.</p>
+        <input type="button" value="Click Me" onclick="create()">
+
+        
+        <input type="button" id="changer" value="Change CSS" onclick="changeCSS()">
+    </body>
+</html>
