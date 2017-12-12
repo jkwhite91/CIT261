@@ -10,6 +10,7 @@ body {
     padding: 2px;
     animation: divright 5s 2;
     animation-direction: normal;
+    visibility: visible;
 }
 
 #reset {

@@ -32,17 +32,26 @@
                             info.push(launch);
                         }
                         size = info.length;
-                        document.getElementById("name").innerHTML = info[0].name;
-                        document.getElementById("number").innerHTML = info[0].flightNum;
-                        document.getElementById("details").innerHTML = info[0].details;
-                        document.getElementById("image").src = info[0].patch;
-                        document.getElementById("site").innerHTML = info[0].site;
 
-                        if (size == 1){
+                        if (size == 1) {
                             numLaunch = ("There was " + size + " launch in " + year);
+                            document.getElementById("name").innerHTML = info[0].name;
+                            document.getElementById("number").innerHTML = info[0].flightNum;
+                            document.getElementById("details").innerHTML = info[0].details;
+                            document.getElementById("image").src = info[0].patch;
+                            document.getElementById("site").innerHTML = info[0].site;
                         }
-                        else{
+                        else if (size > 1) {
                             numLaunch = ("There were " + size + " launches in " + year);
+                            document.getElementById("name").innerHTML = info[0].name;
+                            document.getElementById("number").innerHTML = info[0].flightNum;
+                            document.getElementById("details").innerHTML = info[0].details;
+                            document.getElementById("image").src = info[0].patch;
+                            document.getElementById("site").innerHTML = info[0].site;
+                        }
+                        else {
+                            document.getElementById("launches").style.visibility = "hidden";
+                            numLaunch = ("There were no launches in " + year);
                         }
                         document.getElementById("launchNum").innerHTML = numLaunch;
                     }
@@ -95,7 +104,7 @@
         <hr>
 
 
-        <div id="launches" class="divright">
+        <div id="launches">
             <h1 id="name" style="text-align: center;"></h1>
             <strong>Flight Number: </strong>
             <h3 id="number" style="text-align: center;"></h3>
