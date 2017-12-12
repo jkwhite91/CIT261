@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Space X Launches</title>
+        <meta charset="UTF-8">
+        <style>
+            .error {
+                color: #c20000;
+                visibility: hidden;
+                font-weight: bolder;
+            }
+            
+            body {
+                background: #666666;
+                color: white;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: -10px; 
+            }
+
+            #button {
+                background: white;
+                border: 1px solid black;
+                border-radius: 8px;
+                margin-left: 40%;
+                padding: 10px;
+            }
+
+            .hbutton{
+                color: black;
+                background: #ffffff;
+                text-decoration: none;
+                border: solid 1px black;
+                padding: 5px;
+            }
+            
+        </style>
+        <script>
+            function display() {
+                var year = document.getElementById("year").value;
+                
+                if (year < 2018 && year > 2005) {
+                    localStorage.setItem("year", year);
+                    document.getElementById("error").style.visibility = "hidden";
+                    document.getElementById("e").style.visibility = "hidden";
+                    window.open("pdisplay.html","_self");
+                }
+                else{
+                    document.getElementById("error").style.visibility = "visible";
+                    document.getElementById("e").style.visibility = "visible";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="index.html" class="hbutton">Home</a>
+        <img src="sxlogo.png" width="320px" height="100px">
+        <h1>Launch Data</h1>
+       
+        <div id="intro">
+            <p>
+                This form gets the launch data of the specified year (between 2006 and 2017) for Space X.
+            </p>
+
+            <label>Launch Year:</label>
+            <input type="int" id="year" name="year"><span id="e" class="error">*</span>
+            <p id="error" class="error">*Please enter a vaild year.</p>
+            <input id="button" type="button" value="Submit" onclick="display()">
+        </div>
+    </body>
+</html>

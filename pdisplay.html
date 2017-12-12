@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Space X Launches</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="project.css">
+        <script>
+            var year = localStorage.getItem("year");
+            
+            var info = new Array();
+            var size = 0;
+            var numLaunch = 0;
+            var dispcount = 0;
+              
+            function load() {
+                var launches= "";
+                var obj = [];	
+                
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        obj = JSON.parse(this.responseText);
+                        for (launches in obj) {
+                            var launch = new Object();				
+                            launch.name = obj[launches]["rocket"]["rocket_name"];
+                            launch.flightNum = obj[launches]["flight_number"];
+                            launch.patch = obj[launches]["links"]["mission_patch"];
+                            launch.site = obj[launches]["launch_site"]["site_name_long"];
+                            launch.video = obj[launches]["links"]["video_link"];
+                            launch.details = obj[launches]["details"];
+
+                            info.push(launch);
+                        }
+                        size = info.length;
+                        document.getElementById("name").innerHTML = info[0].name;
+                        document.getElementById("number").innerHTML = info[0].flightNum;
+                        document.getElementById("details").innerHTML = info[0].details;
+                        document.getElementById("image").src = info[0].patch;
+                        document.getElementById("site").innerHTML = info[0].site;
+
+                        if (size == 1){
+                            numLaunch = ("There was " + size + " launch in " + year);
+                        }
+                        else{
+                            numLaunch = ("There were " + size + " launches in " + year);
+                        }
+                        document.getElementById("launchNum").innerHTML = numLaunch;
+                    }
+                }
+                xmlhttp.open("GET", "https://api.spacexdata.com/v2/launches?launch_year="+year, true);
+                xmlhttp.send();
+            }
+
+            function right(){
+                if (dispcount < size && dispcount > -1){
+                    document.getElementById("name").innerHTML = info[dispcount].name;
+                    document.getElementById("number").innerHTML = info[dispcount].flightNum;
+                    document.getElementById("details").innerHTML = info[dispcount].details;
+                    document.getElementById("image").src = info[dispcount].patch;
+                    document.getElementById("site").innerHTML = info[dispcount].site;
+                    dispcount++;
+                }
+                
+                if (dispcount == size ){
+                    dispcount = -1;
+                    dispcount++;
+                }
+            }
+
+            function left(){
+                if (dispcount <= size && dispcount > -1){
+                    document.getElementById("name").innerHTML = info[dispcount].name;
+                    document.getElementById("number").innerHTML = info[dispcount].flightNum;
+                    document.getElementById("details").innerHTML = info[dispcount].details;
+                    document.getElementById("image").src = info[dispcount].patch;
+                    document.getElementById("site").innerHTML = info[dispcount].site;
+                    dispcount--;
+                }
+                
+                if(dispcount == -1){
+                    dispcount = size;
+                    dispcount--;
+                }
+            }
+    
+            function reset(){
+                window.open("Project.html","_self");
+            }
+        </script>
+    </head>
+    <body onload="load()">
+        <button id="reset" onclick="reset()">Reset</button>
+        <p id="launchNum"></p>
+        
+        <hr>
+
+
+        <div id="launches" class="divright">
+            <h1 id="name" style="text-align: center;"></h1>
+            <strong>Flight Number: </strong>
+            <h3 id="number" style="text-align: center;"></h3>
+            <label for="details">Flight details:</label>
+            <p id="details"></p>
+            <img src="" id="image" width="150px" height="200px"><br/>
+            <label for="site">Launch Site: </label>
+            <p id="site"></p>
+        </div>
+
+        <div>
+            <button onclick="left()" class="lb"></button>
+        </div>
+        <div>
+            <i class="left"></i>
+        </div>
+
+        <div>
+            <button onclick="right()" class="rb"></button>
+        </div>
+        <div>
+            <i class="right"></i>
+        </div>
+
+    </body>
+    
+</html>

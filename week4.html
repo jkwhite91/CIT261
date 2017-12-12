@@ -2,66 +2,59 @@
 <html>
     <head>
         <title>Week 4</title>
-        <style>
-            .hbutton{
-                color: black;
-                text-decoration: none;
-                border: solid 1px black;
-                padding: 5px;
-            }
-        </style>
     </head>
     <body>
-        <a href="index.html" class="hbutton">Home</a>
         <h1>AJAX and a JSON Web Service</h1>
-        <p id="intro">
-            This form gets the launch data of the specified year (after 2010) for the Space X launches. Once the information is pulled,<br/>
-            it will display it. I'm unsure why but you need to click submit twice. Otherwise it works.
-        </p>
+       
+        <div id="intro">
+            <p>
+                This form gets the launch data of the specified year for Space X. Once the information is pulled,<br/>
+                it will display it. It does this by hiding this text and the form by altering the css and displaying the launch data.
+            </p>
 
-        <label>Launch Year:</label>
-        <input type="int" id="year">
-        <input type="submit" value="Submit" onclick="display()">
-    
+            <label>Launch Year:</label>
+            <input type="int" name="year">
+            <input type="button" value="Submit" onclick="display()">
+        </div>
+
         <div id="launches">
         </div>
 
-        <input type="button" value="Reset" onclick="reset()">
+        <input type="button" name="reset" value="Reset" onclick="reset()">
     </body>
     <script>
-        var launches ="";
-        function display() {
-            var year = document.getElementById("year").value;
-            var launch= "";
-		    var obj = [];	
-           
-           console.log(year);
-	    	var xmlhttp = new XMLHttpRequest();
-		    xmlhttp.onreadystatechange = function() {
-			    if (this.readyState == 4 && this.status == 200) {
-			        obj = JSON.parse(this.responseText);
-                    launches="";
-                    for (launch in obj) {				
-                        launches+="<h2>Name: "+obj[launch]["rocket"]["rocket_name"]+"</h2>";
-                        launches+="<p>Flight Number: "+obj[launch]["flight_number"]+"<br/>";
-                        launches+="Reused: "+obj[launch]["reused"]+"<br/>";
-                        launches+="Landed: "+obj[launch]["land_success"]+"</p>";
-                        launches+="<label>Mission Patch: </label><br/>";
-                        launches+="<img src='"+obj[launch]["links"]["mission_patch"]+"' width='350px' height='400px'>";
-                    }
-                    console.log(launches);
-		        }
+        function getLaunch() {
+            var year = document.getElementById('year').value;
+		    if(year){
+                var xmlhttp = new XMLHttpRequest();
+		        xmlhttp.onreadystatechange = display;
+			    xmlhttp.open("GET", "https://api.spacexdata.com/v1/launches?year=" + year, true);
+                xmlhttp.send();
             }
-		    xmlhttp.open("GET", "https://api.spacexdata.com/v1/launches?year="+year, true);
-		    xmlhttp.send();
+        }
 
+        function display() {
+            var launch = "";
+            var obj = [];
+            var launches ="";
+            if (this.readyState == 4 && this.status == 200) {
+			    obj = JSON.parse(this.responseText);
+                for (launch in obj) {				
+                    launches+="<h2>Name: "+obj[launch]['rocket']['rocket_name']+"</h2>";
+                    launches+="<p>Flight Number: "+obj[launch]["flight_number"]+"<br/>";
+                    launches+="Reused: "+obj[launch]["reused"]+"<br/><br/>";
+                }
+                launches+="</p>";
+		    }
+            document.getElementById("intro").style.visibility="hidden";
+			document.getElementById("reset").style.visibility="show";
             document.getElementById("launches").innerHTML = launches;
-            launches="";
         }
 
         function reset(){
             document.getElementById("launches").innerHTML="";
-            launches="";
+            document.getElementById("intro").style.visibility = "show";
+            document.getElementById("reset").style.visibility = "hidden";
         }
     </script>
 </html>

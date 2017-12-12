@@ -1,0 +1,510 @@
+.zombie_left {
+    width: 200px;
+    height: 200px;
+    background-image: url("zombie_left.png");
+    animation: zombieLplay 4.0s steps(14) infinite;
+}
+
+@keyframes zombieLplay {
+   100% { background-position: -2800px; }
+}
+
+.zombie_right {
+    width: 200px;
+    height: 200px;
+    background-image: url("zombie_right.png");
+    animation: zombieRplay 4.0s steps(14) infinite;
+}
+
+@keyframes zombieRplay {
+   100% { background-position: -2800px; }
+}
+
+.zombie_enter {
+    width: 200px;
+    height: 200px;
+    background-image: url("zombie_enter.png");
+    animation: zombieEplay 3.0s steps(1) infinite;
+}
+
+@keyframes zombieEplay {
+   100% { background-position: 0px; }
+}
+
+.zombie_death {
+    width: 200px;
+    height: 200px;
+    background-image: url("zombie_death.png");
+    animation: zombiedplay 2.5s steps(6) infinite;
+}
+
+@keyframes zombiedplay {
+   100% { background-position: -1200px; }
+}
+
+.zombie_dead {
+    width: 200px;
+    height: 200px;
+    background-image: url("zombie_dead.png");
+    animation: zombienoplay 2.5s steps(1) infinite;
+}
+
+@keyframes zombienoplay {
+   100% { background-position: 0px; }
+}
+
+.zombie_dissapear {
+    width: 200px;
+    height: 200px;
+    background-image: url("zombie_dissapear.png");
+    animation: zombiegone 2.5s steps(6) infinite;
+}
+
+@keyframes zombiegone {
+   100% { background-position: -1200px; }
+}
+
+.skeleton_left {
+    width: 200px;
+    height: 200px;
+    background-image: url("skeleton_left.png");
+    animation: skeletonLplay 2.0s steps(13) infinite;
+}
+
+@keyframes skeletonLplay {
+   100% { background-position: -2600px; }
+}
+
+.skeleton_right {
+    width: 200px;
+    height: 200px;
+    background-image: url("skeleton_right.png");
+    animation: skeletonRplay 2.0s steps(13) infinite;
+}
+
+@keyframes skeletonRplay {
+   100% { background-position: -2600px; }
+}
+
+.skeleton_death {
+    width: 200px;
+    height: 200px;
+    background-image: url("skeleton_die.png");
+    animation: skeletonDplay 3.0s steps(3) infinite;
+}
+
+@keyframes skeletonDplay {
+   100% { background-position: 600px; }
+}
+
+.ogre_left{
+    width: 200px;
+    height: 200px;
+    background-image: url("Ogre_left.png");
+    animation: ogreLplay 3.0s steps(9) infinite;
+}
+
+@keyframes ogreLplay{
+   100% { background-position: -1800px; }
+}
+
+.ogre_right{
+    width: 200px;
+    height: 200px;
+    background-image: url("Ogre_right.png");
+    animation: ogreRplay 3.0s steps(9) infinite;
+}
+
+@keyframes ogreRplay{
+   100% { background-position: -1800px; }
+}
+
+.ogre_enter{
+    width: 200px;
+    height: 200px;
+    background-image: url("Ogre_enter.png");
+    animation: ogreEplay 3.0s steps(1) infinite;
+}
+
+@keyframes ogreEplay{
+   100% { background-position: 0px; }
+}
+
+.ogre_forward{
+    width: 200px;
+    height: 200px;
+    background-image: url("Ogre_forward.png");
+    animation: ogreFplay 3.0s steps(7) infinite;
+}
+
+@keyframes ogreFplay{
+   100% { background-position: -1400px; }
+}
+
+.ogre_attack{
+    width: 200px;
+    height: 200px;
+    background-image: url("Ogre_attack.png");
+    animation: ogreAplay 1.0s steps(6) infinite;
+}
+
+@keyframes ogreAplay{
+   100% { background-position: -1200px; }
+}
+
+.ogre_death{
+    width: 200px;
+    height: 200px;
+    background-image: url("Ogre_death.png");
+    animation: ogreDplay 3.0s steps(6) infinite;
+}
+
+@keyframes ogreDplay{
+   100% { background-position: -1200px; }
+}
+
+.ogre_dead{
+    width: 200px;
+    height: 200px;
+    background-image: url("Ogre_dead.png");
+    animation: ogreNoplay 3.0s steps(1) infinite;
+}
+
+@keyframes ogreNoplay{
+   100% { background-position: 0px; }
+}
+
+.dog_barkl {
+    width: 200px;
+    height: 200px;
+    background-image: url("dog_barkl.png");
+    animation: dogbarkl 1.0s steps(4) infinite;
+}
+
+@keyframes dogbarkl {
+   100% { background-position: -800px; }
+}
+
+.dog_barkr {
+    width: 200px;
+    height: 200px;
+    background-image: url("dog_barkr.png");
+    animation: dogbarkr 1.0s steps(4) infinite;
+}
+
+@keyframes dogbarkr {
+   100% { background-position: -800px; }
+}
+
+.dog_apear {
+    width: 200px;
+    height: 200px;
+    background-image: url("dog_apear.png");
+    animation: dogapear 2.0s steps(11) infinite;
+}
+
+@keyframes dogapear {
+   100% { background-position: -2200px; }
+}
+
+.dog_left {
+    width: 200px;
+    height: 200px;
+    background-image: url("dog_left.png");
+    animation: dogleft 0.6s steps(5) infinite;
+}
+
+@keyframes dogleft {
+   100% { background-position: -1000px; }
+}
+
+.dog_right {
+    width: 200px;
+    height: 200px;
+    background-image: url("dog_right.png");
+    animation: dogright 0.6s steps(5) infinite;
+}
+
+@keyframes dogright {
+   100% { background-position: 1000px; }
+}
+
+.dog_dead {
+    width: 200px;
+    height: 200px;
+    background-image: url("dog_dead.png");
+    animation: dogdead 0.6s steps(1) infinite;
+}
+
+@keyframes dogdead {
+   100% { background-position: 0px; }
+}
+
+.assassin_apear{
+    width: 200px;
+    height: 200px;
+    background-image: url("ninja_apear.png");
+    animation: assassinapear 1.0s steps(7) infinite;
+}
+
+@keyframes assassinapear {
+   100% { background-position: -1400px; }
+}
+
+.assassin_enter{
+    width: 200px;
+    height: 200px;
+    background-image: url("ninja_enter.png");
+    animation: assassinenter 1.0s steps(1) infinite;
+}
+
+@keyframes assassinenter {
+   100% { background-position: 0px; }
+}
+
+
+.assassin_left {
+    width: 200px;
+    height: 200px;
+    background-image: url("ninja_left.png");
+    animation: assassinleft 1.2s steps(9) infinite;
+}
+
+@keyframes assassinleft {
+   100% { background-position: -1800px; }
+}
+
+
+.assassin_right {
+    width: 200px;
+    height: 200px;
+    background-image: url("ninja_right.png");
+    animation: assassinright 1.2s steps(9) infinite;
+}
+
+@keyframes assassinright {
+   100% { background-position: -1800px; }
+}
+
+.assassin_punchl{
+    width: 200px;
+    height: 200px;
+    background-image: url("ninja_punchl.png");
+    animation: assassinpunchl  0.8s steps(4) infinite;
+}
+
+@keyframes assassinpunchl{
+   100% { background-position: -800px; }
+}
+
+.assassin_punchr{
+    width: 200px;
+    height: 200px;
+    background-image: url("ninja_punchr.png");
+    animation: assassinpunchr  0.8s steps(4) infinite;
+}
+
+@keyframes assassinpunchr {
+   100% { background-position: -800px; }
+}
+.assassin_death{
+    width: 200px;
+    height: 200px;
+    background-image: url("ninja_death.png");
+    animation: assassinDplay 0.8s steps(5) infinite;
+}
+
+@keyframes assassinDplay {
+   100% { background-position: -1000px; }
+}
+
+.assassin_dead{
+    width: 200px;
+    height: 200px;
+    background-image: url("ninja_dead.png");
+    animation: assassinNoplay  0.8s steps(1) infinite;
+}
+
+@keyframes assassinNoplay {
+   100% { background-position: 0px; }
+}
+
+.wizard_apear{
+    width: 200px;
+    height: 200px;
+    background-image: url("wizard_apear.png");
+    animation: wapear 1.0s steps(5) infinite;
+}
+
+@keyframes  wapear{
+   100% { background-position: -1000px; }
+}
+
+.wizard_enter{
+    width: 200px;
+    height: 200px;
+    background-image: url("wizard_enter.png");
+    animation: wenter 1.0s steps(1) infinite;
+}
+
+@keyframes  wenter{
+   100% { background-position: 0px; }
+}
+
+.wizard_left {
+    width: 200px;
+    height: 200px;
+    background-image: url("wizard_left.png");
+    animation: wleft 1.0s steps(8) infinite;
+}
+
+@keyframes  wleft{
+   100% { background-position: -1600px; }
+}
+
+.wizard_right {
+    width: 200px;
+    height: 200px;
+    background-image: url("wizard_right.png");
+    animation: wright 1.0s steps(8) infinite;
+}
+
+@keyframes  wright{
+   100% { background-position: -1600px; }
+}
+
+.theif_left {
+    width: 200px;
+    height: 200px;
+    background-image: url("thief_left.png");
+    animation: tleft 1.0s steps(6) infinite;
+}
+
+@keyframes tleft{
+   100% { background-position: -1200px; }
+}
+
+.theif_right {
+    width: 200px;
+    height: 200px;
+    background-image: url("theif_right.png");
+    animation: tright 1.0s steps(6) infinite;
+}
+
+@keyframes tright{
+   100% { background-position: -1200px; }
+}
+
+.lich_left {
+    width: 200px;
+    height: 200px;
+    background-image: url("lich_left.png");
+    animation: lichl 2.0s steps(6) infinite;
+}
+
+@keyframes lichl {
+   100% { background-position: -1200px; }
+}
+
+
+.lich_right {
+    width: 200px;
+    height: 200px;
+    background-image: url("Lich_right.png");
+    animation: lichr 2.0s steps(6) infinite;
+}
+
+@keyframes lichr {
+   100% { background-position: -1200px; }
+}
+
+.lich_attackf {
+    width: 200px;
+    height: 200px;
+    background-image: url("Lich_attackf.png");
+    animation: laf  1.0s steps(9) infinite;
+}
+
+@keyframes laf {
+   100% { background-position: -1800px; }
+}
+
+
+.lich_attackr {
+    width: 200px;
+    height: 200px;
+    background-image: url("lich_attackr.png");
+    animation: lar  0.8s steps(3) infinite;
+}
+
+@keyframes lar {
+   100% { background-position: -600px; }
+}
+
+
+.lich_attackl {
+    width: 200px;
+    height: 200px;
+    background-image: url("lich_attackl.png");
+    animation: lal 0.8s steps(3) infinite;
+}
+
+@keyframes lal {
+   100% { background-position: -600px; }
+}
+
+
+.lich_specialmove{
+    width: 200px;
+    height: 200px;
+    background-image: url("lich_specialmove.png");
+    animation: lsm  6.0s steps(7) infinite;
+}
+
+@keyframes lsm {
+   100% { background-position: -1400px; }
+}
+
+.lich_death {
+    width: 200px;
+    height: 200px;
+    background-image: url("lich_death.png");
+    animation: ld 5.0s steps(5) infinite;
+}
+
+@keyframes ld{
+   100% { background-position: -1000px; }
+}
+
+.genie_apear {
+    width: 200px;
+    height: 200px;
+    background-image: url("Genie appear.png");
+    animation: gapear 2.5s steps(5) infinite;
+}
+
+@keyframes gapear{
+   100% { background-position: -1000px; }
+}
+
+.genie_entrance {
+    width: 200px;
+    height: 200px;
+    background-image: url("Genie.png");
+    animation: ld 5.0s steps(0) infinite;
+}
+
+@keyframes ld{
+   100% { background-position: 0px; }
+}
+
+.genie_dissapear {
+    width: 200px;
+    height: 200px;
+    background-image: url("Genie appear.png");
+    animation: gdisapear 2.5s steps(5) infinite;
+}
+
+@keyframes gdisapear{
+   100% { background-position: 1000px; }
+}

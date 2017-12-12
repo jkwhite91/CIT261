@@ -1,0 +1,82 @@
+body {
+    background: #666666;
+    color: white;
+}
+
+#launches {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid black;
+    padding: 2px;
+    animation: divright 5s 2;
+    animation-direction: normal;
+}
+
+#reset {
+    background: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-left: 40%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 15px;
+    padding-left: 15px
+}
+
+#launchNum {
+    text-align: center;
+    font-weight: bolder;
+}
+
+i {
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 5px;
+}
+
+.left {
+    position: absolute;
+    top: 15px;
+    left: 13px;
+    margin-top: 200px;
+    margin-left: 0%;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    opacity: 0.3;
+}
+
+.lb {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    margin-top: 200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    opacity: 0.2;
+}
+
+.right {
+    position: absolute;
+    top: 15px;
+    right: 13px;
+    margin-top: 200px;
+    margin-right: 0%;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    opacity: 0.3;
+}
+
+.rb {
+    position: absolute;
+    top: -10px;
+    right: 0px;
+    margin-top: 200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    opacity: 0.2;
+}

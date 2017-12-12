@@ -3,6 +3,28 @@
     <head>
         <title>Week 12</title>
         <link rel="stylesheet" type="text/css" href="week12.css">
+    
+        <script>
+            var x = 0;
+            var y = 0;
+            var z = 0;
+
+            function rotateLeft() {
+                document.getElementById("threed").style.transform:
+            }
+
+            function rotateRight() {
+
+            }
+
+            function rotateUp() {
+
+            }
+
+            function rotateZ() {
+
+            }
+        </script>
     </head>
     <body>
         <a href="index.html" class="hbutton">Home</a>
@@ -14,6 +36,16 @@
         <br/>
         <br/>
         <br/>
+        <br/>
+        <input type="button" value="&lt;" onclick="rotateLeft()">
+        <input type="button" value="^" onclick="rotateUp()">
+        <input type="button" value="&gt;" onclick="rotateRight()">
+        <input type="button" value="Z" onclick"rotateZ()">
+        <br/>
+        <br/>
+        <br/>
+        <p>This 2d div tag uses a matrix to determine the size, angle and skew. The matrix call looks like this :</p>
+        <p>matrix(1, 0, 0.5, 1, 300, 0)</p>
         <br/>
         <div id="twod">
             This is the 2d div
